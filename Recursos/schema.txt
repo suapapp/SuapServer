@@ -1,0 +1,62 @@
+
+
+create table users
+(
+	id int not null,
+	login varchar(250) not null,
+	login_type smallint not null,
+	account_type smallint not null,
+	last_long double not null,
+	last_lat double not null
+);
+
+create table products
+(
+	id int not null,
+	description varchar(4000) not null,
+	ref_owner int not null,
+	state smallint not null
+);
+	
+
+create table messages
+(
+	id int not null,
+	content varchar(4000) not null,
+	dt_message timestamp not null,
+	ref_owner int not null,
+	ref_exchange int not null
+);
+
+
+create table exchanges
+(
+	id int not null,
+	ref_product1 int not null,
+	ref_product2 int not null,
+	ref_product3 int not null,
+	state smallint not null
+);
+	
+
+create table interests
+(
+	id int not null,
+	ref_source int not null,
+	ref_target int not null,
+	value boolean not null
+);	
+	
+
+create table tags
+(
+	ref_product int not null,
+	value varchar(80) not null
+);
+	
+	
+	
+	
+	
+	
+	
